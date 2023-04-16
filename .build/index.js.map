@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../index.ts"],
+  "sourcesContent": ["import express from 'express';\nimport path from 'path';\n\nconst app = express();\n\n// Serve static files from the 'public' folder\napp.use(express.static(path.join(__dirname, '..', 'public')));\napp.use('/bootstrap-css', express.static(path.join(__dirname, '..', 'node_modules', 'bootstrap', 'dist', 'css')));\napp.use('/bootstrap-js', express.static(path.join(__dirname, '..', 'node_modules', 'bootstrap', 'dist', 'js')));\n\napp.get('/', (req, res) => {\n\tres.sendFile(path.join(__dirname, '..', 'public', 'index.html'));\n});\n\napp.listen(3000, () => {\n\tconsole.log('Server running on port 3000');\n});\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;AAAA,qBAAoB;AACpB,kBAAiB;AAEjB,MAAM,UAAM,eAAAA,SAAQ;AAGpB,IAAI,IAAI,eAAAA,QAAQ,OAAO,YAAAC,QAAK,KAAK,WAAW,MAAM,QAAQ,CAAC,CAAC;AAC5D,IAAI,IAAI,kBAAkB,eAAAD,QAAQ,OAAO,YAAAC,QAAK,KAAK,WAAW,MAAM,gBAAgB,aAAa,QAAQ,KAAK,CAAC,CAAC;AAChH,IAAI,IAAI,iBAAiB,eAAAD,QAAQ,OAAO,YAAAC,QAAK,KAAK,WAAW,MAAM,gBAAgB,aAAa,QAAQ,IAAI,CAAC,CAAC;AAE9G,IAAI,IAAI,KAAK,CAAC,KAAK,QAAQ;AAC1B,MAAI,SAAS,YAAAA,QAAK,KAAK,WAAW,MAAM,UAAU,YAAY,CAAC;AAChE,CAAC;AAED,IAAI,OAAO,KAAM,MAAM;AACtB,UAAQ,IAAI,6BAA6B;AAC1C,CAAC;",
+  "names": ["express", "path"]
+}
